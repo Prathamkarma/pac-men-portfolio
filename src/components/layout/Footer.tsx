@@ -34,8 +34,7 @@ export default function Footer() {
                 </span>
               </div>
               <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
-                Navigating the AI maze, one power-up at a time. Summer of AI
-                Internship — 2025.
+                Navigating the AI maze, one power-up at a time. PS-I Internship @ Swecha— 2026.
               </p>
 
               {/* Pac dot trail */}
@@ -115,7 +114,7 @@ export default function Footer() {
           <p className="text-xs text-text-muted flex items-center gap-1.5">
             Crafted with{" "}
             <Heart size={12} className="text-neon-pink fill-neon-pink animate-pulse" />{" "}
-            by PAC-Men &middot; Summer of AI 2025
+            by PAC-Men &middot; PS-I Internship @ Swecha 2026
           </p>
 
           {/* Scroll to top */}

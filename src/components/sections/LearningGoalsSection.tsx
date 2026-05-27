@@ -19,7 +19,7 @@ interface Milestone {
 const MILESTONES: Milestone[] = [
   {
     title: "AI Foundations & Deep Learning",
-    time: "Phase 1: June 2025",
+    time: "Phase 1: June 2026",
     status: "in-progress",
     desc: "Mastering PyTorch, neural architectures, weights/biases optimization, computer vision try-on systems, and bioinformatics DB querying engines.",
     players: ["Pratham", "Amitesh", "Chaitanya"],
@@ -27,7 +27,7 @@ const MILESTONES: Milestone[] = [
   },
   {
     title: "AI Engineering & LLM Workflows",
-    time: "Phase 2: July 2025",
+    time: "Phase 2: July 2026",
     status: "in-progress",
     desc: "Orchestrating agentic models, semantic vector database search indexes, RAG prompt tuning, and structured JSON parsing automation.",
     players: ["Pratham", "Amitesh"],
@@ -35,7 +35,7 @@ const MILESTONES: Milestone[] = [
   },
   {
     title: "Full Stack Systems & Web Apps",
-    time: "Phase 3: July 2025",
+    time: "Phase 3: July 2026",
     status: "in-progress",
     desc: "Designing responsive fluid interfaces, state management, complex database query architectures, and practical charging aggregating frameworks.",
     players: ["Chaitanya", "Amitesh"],
@@ -43,7 +43,7 @@ const MILESTONES: Milestone[] = [
   },
   {
     title: "Cloud Infrastructure & DevOps",
-    time: "Phase 4: August 2025",
+    time: "Phase 4: August 2026",
     status: "target",
     desc: "Deploying dockerized microservices, setting up resilient CI/CD GitHub workflows, using cloud infrastructure (AWS/Vercel), and optimizing query latency.",
     players: ["Chaitanya"],
@@ -51,7 +51,7 @@ const MILESTONES: Milestone[] = [
   },
   {
     title: "Scalable ML Systems & Design",
-    time: "Phase 5: Late August 2025",
+    time: "Phase 5: Late August 2026",
     status: "target",
     desc: "Building highly concurrent bioinformatics systems, low-latency API layers, customized data ingestion, and scalable systems.",
     players: ["Pratham", "Amitesh"],

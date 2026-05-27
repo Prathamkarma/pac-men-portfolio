@@ -136,7 +136,7 @@ export default function OpenSourceSection() {
                     pacmen_learning_log.json
                   </h4>
                   <span className="text-[10px] font-mono text-text-muted">
-                    Commits Activity (2025)
+                    Commits Activity (2026)
                   </span>
                 </div>
 
