@@ -1,0 +1,355 @@
+@import "tailwindcss";
+
+/* ============================================
+   PAC-Men Design System — Theme Variables
+   ============================================ */
+
+:root {
+  /* Core backgrounds */
+  --bg-primary: #06060e;
+  --bg-secondary: #0c0c18;
+  --bg-tertiary: #111122;
+  --bg-card: #0e0e1a;
+
+  /* Neon accents */
+  --neon-yellow: #ffe44d;
+  --neon-yellow-dim: #ffe44d80;
+  --neon-cyan: #00e5ff;
+  --neon-cyan-dim: #00e5ff60;
+  --neon-purple: #b44dff;
+  --neon-purple-dim: #b44dff60;
+  --neon-pink: #ff4da6;
+
+  /* Text */
+  --text-primary: #f0f0f5;
+  --text-secondary: #9999b3;
+  --text-muted: #555577;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-bg-hover: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-hover: rgba(255, 255, 255, 0.15);
+
+  /* Spacing scale */
+  --section-padding-y: clamp(4rem, 10vh, 8rem);
+  --section-padding-x: clamp(1rem, 5vw, 6rem);
+  --container-max: 1280px;
+}
+
+/* ============================================
+   Tailwind v4 Theme Extension
+   ============================================ */
+
+@theme inline {
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-card: var(--bg-card);
+
+  --color-neon-yellow: var(--neon-yellow);
+  --color-neon-yellow-dim: var(--neon-yellow-dim);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-cyan-dim: var(--neon-cyan-dim);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-purple-dim: var(--neon-purple-dim);
+  --color-neon-pink: var(--neon-pink);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-bg-hover: var(--glass-bg-hover);
+  --color-glass-border: var(--glass-border);
+  --color-glass-border-hover: var(--glass-border-hover);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Custom animation durations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-chomp: chomp 0.3s linear infinite;
+  --animate-dot-move: dot-move 2s linear infinite;
+  --animate-gradient-shift: gradient-shift 8s ease infinite;
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-purple-dim);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-purple);
+}
+
+::selection {
+  background: var(--neon-cyan-dim);
+  color: var(--text-primary);
+}
+
+/* ============================================
+   Glassmorphism Utilities
+   ============================================ */
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-hover:hover {
+  background: var(--glass-bg-hover);
+  border-color: var(--glass-border-hover);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Neon Glow Utilities
+   ============================================ */
+
+.glow-yellow {
+  box-shadow:
+    0 0 15px var(--neon-yellow-dim),
+    0 0 40px rgba(255, 228, 77, 0.15),
+    inset 0 0 15px rgba(255, 228, 77, 0.05);
+}
+
+.glow-cyan {
+  box-shadow:
+    0 0 15px var(--neon-cyan-dim),
+    0 0 40px rgba(0, 229, 255, 0.15),
+    inset 0 0 15px rgba(0, 229, 255, 0.05);
+}
+
+.glow-purple {
+  box-shadow:
+    0 0 15px var(--neon-purple-dim),
+    0 0 40px rgba(180, 77, 255, 0.15),
+    inset 0 0 15px rgba(180, 77, 255, 0.05);
+}
+
+.text-glow-yellow {
+  text-shadow: 0 0 20px var(--neon-yellow-dim), 0 0 40px rgba(255, 228, 77, 0.2);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 20px var(--neon-cyan-dim), 0 0 40px rgba(0, 229, 255, 0.2);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 20px var(--neon-purple-dim), 0 0 40px rgba(180, 77, 255, 0.2);
+}
+
+/* ============================================
+   Gradient Utilities
+   ============================================ */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--neon-yellow), var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+}
+
+.gradient-text-yellow-cyan {
+  background: linear-gradient(135deg, var(--neon-yellow), var(--neon-cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-cyan-purple {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--neon-yellow-dim), var(--neon-cyan-dim), var(--neon-purple-dim));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ============================================
+   Ambient Background Orbs
+   ============================================ */
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.orb-yellow {
+  background: radial-gradient(circle, var(--neon-yellow), transparent);
+}
+
+.orb-cyan {
+  background: radial-gradient(circle, var(--neon-cyan), transparent);
+}
+
+.orb-purple {
+  background: radial-gradient(circle, var(--neon-purple), transparent);
+}
+
+/* ============================================
+   PAC-Man Specific Styles
+   ============================================ */
+
+.pac-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-yellow);
+  box-shadow: 0 0 6px var(--neon-yellow-dim);
+}
+
+.pac-dot-trail {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ============================================
+   Section Utilities
+   ============================================ */
+
+.section-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--section-padding-y) var(--section-padding-x);
+  position: relative;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--glass-border),
+    var(--neon-cyan-dim),
+    var(--glass-border),
+    transparent
+  );
+  margin: 0 auto;
+  max-width: var(--container-max);
+}
+
+/* ============================================
+   Keyframe Animations
+   ============================================ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes chomp {
+  0% { clip-path: polygon(100% 50%, 50% 0%, 0% 0%, 0% 100%, 50% 100%); }
+  50% { clip-path: polygon(100% 50%, 80% 10%, 0% 0%, 0% 100%, 80% 90%); }
+  100% { clip-path: polygon(100% 50%, 50% 0%, 0% 0%, 0% 100%, 50% 100%); }
+}
+
+@keyframes dot-move {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-30px); opacity: 0; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes maze-line {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+/* ============================================
+   Responsive Helpers
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: clamp(3rem, 8vh, 5rem);
+    --section-padding-x: clamp(1rem, 4vw, 2rem);
+  }
+}
