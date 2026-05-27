@@ -53,7 +53,7 @@ export default function HeroSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-neon-yellow opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-neon-yellow shadow-[0_0_8px_var(--neon-yellow)]"></span>
             </span>
-            <span>PS-I Internship @ Swecha &middot; 2026</span>
+            <span>PS-I Internship @ Swecha Team Portfolio &middot; 2026</span>
           </motion.div>
 
           {/* Main Hero Header */}
