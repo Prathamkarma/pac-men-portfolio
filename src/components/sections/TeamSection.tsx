@@ -90,12 +90,16 @@ export default function TeamSection() {
                   <div className="flex justify-between items-start">
                     <div
                       className={cn(
-                        "w-14 h-14 rounded-2xl flex items-center justify-center font-mono font-extrabold text-xl border",
+                        "w-14 h-14 rounded-2xl overflow-hidden border",
                         avatarBgMap[member.accentColor],
                         shadowColorMap[member.accentColor]
                       )}
                     >
-                      {member.avatar}
+                      <img 
+                        src={`/avatar/${member.name.split(' ')[0]}.png`} 
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     {/* Tiny arcade arrow indicator */}
                     <div className="text-text-muted group-hover:translate-x-1.5 transition-transform duration-300">
@@ -196,13 +200,17 @@ export default function TeamSection() {
                         {/* Huge initials avatar */}
                         <div
                           className={cn(
-                            "w-24 h-24 rounded-3xl flex items-center justify-center font-mono font-extrabold text-4xl border mx-auto shadow-lg",
-                            activeMember.accentColor === "yellow" && "bg-neon-yellow/10 text-neon-yellow border-neon-yellow/20 shadow-neon-yellow/10",
-                            activeMember.accentColor === "cyan" && "bg-neon-cyan/10 text-neon-cyan border-neon-cyan/20 shadow-neon-cyan/10",
-                            activeMember.accentColor === "purple" && "bg-neon-purple/10 text-neon-purple border-neon-purple/20 shadow-neon-purple/10"
+                            "w-24 h-24 rounded-3xl overflow-hidden border mx-auto shadow-lg relative",
+                            activeMember.accentColor === "yellow" && "border-neon-yellow/40 shadow-neon-yellow/20",
+                            activeMember.accentColor === "cyan" && "border-neon-cyan/40 shadow-neon-cyan/20",
+                            activeMember.accentColor === "purple" && "border-neon-purple/40 shadow-neon-purple/20"
                           )}
                         >
-                          {activeMember.avatar}
+                          <img 
+                            src={`/avatar/${activeMember.name.split(' ')[0]}.png`} 
+                            alt={activeMember.name}
+                            className="w-full h-full object-cover"
+                          />
                         </div>
 
                         <div className="text-center space-y-2">
